@@ -3,12 +3,15 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Damageable
+  - AttacksHolder
+  - WorldSpaceCanvas
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Post
   - Water
   - UI
   - 
