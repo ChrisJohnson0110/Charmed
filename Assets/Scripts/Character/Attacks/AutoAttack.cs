@@ -24,19 +24,14 @@ public class AutoAttack : MonoBehaviour
 
     private void Update()
     {
+
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         Physics.Raycast(ray, out RaycastHit hit);
 
-        if (hit.transform.gameObject.tag == "Damageable")
+
+        //////////////////Auto attack//////////////////
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            //hit.transform.gameObject
-        }
-
-
-        if (Input.GetMouseButtonDown(0))
-        {
-            
-
             if (PlayerReference.EquippedWeapon.IsRanged == true)
             {
                 AutoAttackRanged(this.gameObject.transform, hit.point);

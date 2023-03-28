@@ -16,4 +16,4 @@ MonoBehaviour:
   BaseProjectileDamage: 5
   BaseProjectileSpeed: 5
   IsRanged: 1
-  DamageType: 1
+  DamageType: 2

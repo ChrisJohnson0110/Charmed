@@ -43,8 +43,13 @@ public class Status : MonoBehaviour
             //    }
             //}
             //StatusDisplay.GetComponent<Text>().text = DisplayStatusString;
-            StatusDisplay.GetComponent<Text>().text = Effects[0].ToString();
+            if (Effects != null)
+            {
+                StatusDisplay.GetComponent<Text>().text = Effects[0].ToString();
+            }
+
         }
+
     }
 
 }

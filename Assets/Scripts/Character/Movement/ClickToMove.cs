@@ -15,28 +15,12 @@ public class ClickToMove : MonoBehaviour
     }
 
     /// <summary>
-    /// when mouse down
-    /// </summary>
-    private void Update()
-    {
-        if (Input.GetMouseButton(0))
-        {
-            MoveToClickPoint();
-        }
-    }
-
-    /// <summary>
     /// cast ray and move to
     /// </summary>
-    private void MoveToClickPoint()
+    private void MoveToClickPoint(RaycastHit hit)
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-        if (Physics.Raycast(ray, out RaycastHit hit))
-        {
-            navAgent.SetDestination(hit.point); // set destination to hit pos
-            CreateClickEffect(hit.point); //create effect at hit pos
-        }
+        navAgent.SetDestination(hit.point); // set destination to hit pos
+        CreateClickEffect(hit.point); //create effect at hit pos
     }
 
     /// <summary>
