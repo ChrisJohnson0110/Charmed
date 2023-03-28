@@ -5,8 +5,7 @@ using UnityEngine;
 public class Outline : MonoBehaviour
 {
     [SerializeField] Material OutlineMaterial;
-    bool HoveringDamageable;
-    bool HoveringNonDamageable;
+    //public bool HoveringDamageable = false;
 
     Renderer OBJRenderer; //objects renderer
     Material[] RendererMaterials; //objects materials
@@ -31,24 +30,15 @@ public class Outline : MonoBehaviour
         OBJRenderer.materials = RendererMaterials; //default render materials
     }
 
-    // Update is called once per frame
-    void Update()
+
+    public void ApplyOutline()
     {
-        //////////////////Outline//////////////////
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out RaycastHit hit))
-        {
-            if (hit.transform.gameObject.tag == "Damageable")
-            {
-                OBJRenderer.materials = MaterialsWithOutline; //ouline renderer material
-            }
-            else
-            {
-                if (OBJRenderer.materials != RendererMaterials)
-                {
-                    OBJRenderer.materials = RendererMaterials; //ouline renderer material
-                }
-            }
-        }
+        OBJRenderer.materials = MaterialsWithOutline; //ouline renderer material
     }
+
+    public void RemoveOutline()
+    {
+        OBJRenderer.materials = RendererMaterials; //ouline renderer material
+    }
+
 }

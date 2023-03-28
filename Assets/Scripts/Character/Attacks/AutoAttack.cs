@@ -22,26 +22,19 @@ public class AutoAttack : MonoBehaviour
         PlayerReference = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
     }
 
-    private void Update()
+    public void Attack(RaycastHit hit)
     {
-
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        Physics.Raycast(ray, out RaycastHit hit);
-
-
         //////////////////Auto attack//////////////////
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (PlayerReference.EquippedWeapon.IsRanged == true)
         {
-            if (PlayerReference.EquippedWeapon.IsRanged == true)
-            {
-                AutoAttackRanged(this.gameObject.transform, hit.point);
-            }
-            else
-            {
-                AutoAttackMelee();
-            }
+            AutoAttackRanged(this.gameObject.transform, hit.point);
+        }
+        else
+        {
+            AutoAttackMelee();
         }
     }
+
 
     /// <summary>
     /// use ranged attack

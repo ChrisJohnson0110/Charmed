@@ -17,10 +17,18 @@ public class ClickToMove : MonoBehaviour
     /// <summary>
     /// cast ray and move to
     /// </summary>
-    private void MoveToClickPoint(RaycastHit hit)
+    public void MoveToClickPoint(RaycastHit hit)
     {
         navAgent.SetDestination(hit.point); // set destination to hit pos
         CreateClickEffect(hit.point); //create effect at hit pos
+    }
+
+    /// <summary>
+    /// stop the current movement path
+    /// </summary>
+    public void StopMoving()
+    {
+        navAgent.SetDestination(gameObject.transform.position);
     }
 
     /// <summary>
