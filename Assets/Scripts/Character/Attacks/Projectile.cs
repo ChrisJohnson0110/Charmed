@@ -40,7 +40,10 @@ public class Projectile : MonoBehaviour
         if (other.transform.tag == "Damageable")
         {
             other.gameObject.GetComponent<Health>().TakeDamage(fProjectileDamage);
-            other.gameObject.GetComponent<Status>().Apply(DamageType);
+            if (other.gameObject.activeSelf == true) //if obj not been destroyed
+            {
+                other.gameObject.GetComponent<Status>().Apply(DamageType); //aplly dmg type effect
+            }
             SetInactive();
         }
 
@@ -52,6 +55,7 @@ public class Projectile : MonoBehaviour
     /// </summary>
     private void SetInactive()
     {
+        CancelInvoke();
         gameObject.SetActive(false);
     }
 

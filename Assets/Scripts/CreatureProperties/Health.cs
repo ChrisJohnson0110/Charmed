@@ -23,9 +23,15 @@ public class Health : MonoBehaviour
 
         if (health <= 0)
         {
+            if (HealthDisplay != null)
+            {
+                HealthDisplay.SetActive(false);
+            }
+            if (StatusReference != null)
+            {
+                StatusReference.StatusDisplay.SetActive(false);
+            }
             gameObject.SetActive(false);
-            HealthDisplay.SetActive(false);
-            StatusReference.StatusDisplay.SetActive(false);
         }
         UpdateDisplay();
     }
