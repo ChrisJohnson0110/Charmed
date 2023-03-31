@@ -13,6 +13,19 @@ public class EnemySO : ScriptableObject
     public float Mana; //resource needed to use abilities
     public float Health;
 
+    //Behaviours
+
+    //agressive
+    public float AgroRange; //range player needed to gain agro
+    public float AgroDistance; //distance before losing agro
+
+    //wander
+    public float WanderRangeStart; //distance can wander from start
+    public float WanderRangeSelf; //distance the wander can be from self
+
+    //fleeing
+    public float FleeingThreshold; //if below this hp flee
+
     //resistences
     public float Armour;
     public float MagicResistence;
@@ -20,6 +33,7 @@ public class EnemySO : ScriptableObject
 
     //attacks
     public bool IsRanged;
+    public float AttackRange;
     public float AttackDamage;
     public float AttackSpeed;
     public Damage.type DamageType;

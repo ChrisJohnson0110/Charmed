@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ProjectileModel: {fileID: 3091368530993789865, guid: bf2e5fe9cda28cc4f961927ba31e5120, type: 3}
   BaseProjectileDamage: 5
-  BaseProjectileSpeed: 5
+  BaseProjectileSpeed: 25
   IsRanged: 1
   DamageType: 2

@@ -11,11 +11,11 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Post
+  - Walkable
   - Water
   - UI
-  - 
-  - 
+  - FriendlyCreature
+  - EnemyCreature
   - 
   - 
   - 
