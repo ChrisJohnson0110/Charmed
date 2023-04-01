@@ -8,14 +8,13 @@ public class MouseRay : MonoBehaviour
     AutoAttack AutoAttackRef;
     Outline OutlineRef; //outline 
 
-    bool HoveringDamageable = false;
-
 
     // Start is called before the first frame update
     void Start()
     {
         ClickToMoveRef = GetComponent<ClickToMove>();
         AutoAttackRef = GetComponent<AutoAttack>();
+        OutlineRef = GetComponent<Outline>();
     }
 
     // Update is called once per frame
@@ -24,35 +23,22 @@ public class MouseRay : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out RaycastHit hit))
         {
-            //////////////////Outline//////////////////
-            if (hit.transform.gameObject.tag == "Damageable")
+            if (hit.transform.gameObject.tag == "Damageable") //if can attack
             {
-                OutlineRef = hit.transform.gameObject.GetComponent<Outline>();
-                OutlineRef.ApplyOutline();
-                HoveringDamageable = true;
-            }
-            else
-            {
-                if (OutlineRef != null)
-                {
-                    OutlineRef.RemoveOutline();
-                }
-                HoveringDamageable = false;
-            }
+                OutlineRef.ApplyOutline(hit.transform.gameObject); //apply outline
 
-
-            if (Input.GetMouseButtonDown(0))
-            {
-                //////////////////Move//////////////////
-                if (HoveringDamageable == false)
-                {
-                    ClickToMoveRef.MoveToClickPoint(hit);
-                }
-                //////////////////Attack//////////////////
-                else if (HoveringDamageable == true)
+                if (Input.GetMouseButtonDown(0)) //if mouse down
                 {
                     AutoAttackRef.Attack(hit);
                     ClickToMoveRef.StopMoving();
+                }
+            }
+            else
+            {
+                OutlineRef.RemoveOutline(); //remove outline
+                if (Input.GetMouseButtonDown(0)) //move
+                {
+                    ClickToMoveRef.MoveToClickPoint(hit);
                 }
             }
         }

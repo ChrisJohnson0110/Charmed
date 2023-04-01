@@ -419,7 +419,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86c62fb2f42672f41ab6fff7541084ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OutlineMaterial: {fileID: 2100000, guid: 2b28ef9c532671942987272f259da1db, type: 2}
 --- !u!114 &82104409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -947,7 +946,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86c62fb2f42672f41ab6fff7541084ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OutlineMaterial: {fileID: 2100000, guid: 2b28ef9c532671942987272f259da1db, type: 2}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -961,6 +959,7 @@ GameObject:
   - component: {fileID: 963194226}
   - component: {fileID: 963194229}
   - component: {fileID: 963194230}
+  - component: {fileID: 963194231}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1027,7 +1026,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.3691258, y: -0, z: -0, w: 0.92937946}
-  m_LocalPosition: {x: 0, y: 7.15, z: -9.08}
+  m_LocalPosition: {x: 0, y: 9.49, z: -12.43}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1084,6 +1083,18 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!114 &963194231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 749c04d15a041c946a110768397d2b69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1085309764
 GameObject:
   m_ObjectHideFlags: 0
@@ -1499,7 +1510,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86c62fb2f42672f41ab6fff7541084ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OutlineMaterial: {fileID: 2100000, guid: 2b28ef9c532671942987272f259da1db, type: 2}
 --- !u!114 &1405955593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1706,6 +1716,8 @@ GameObject:
   - component: {fileID: 1623238782}
   - component: {fileID: 1623238787}
   - component: {fileID: 1623238789}
+  - component: {fileID: 1623238792}
+  - component: {fileID: 1623238793}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -1863,6 +1875,30 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7dcde65aeb694724ab9c9faecf96632d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1623238792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1623238781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9f92f9ac3618be46a96381503f48634, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1623238793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1623238781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 500c39b5617161740bbc0d29de003161, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1689165157
@@ -2157,7 +2193,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86c62fb2f42672f41ab6fff7541084ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OutlineMaterial: {fileID: 2100000, guid: 2b28ef9c532671942987272f259da1db, type: 2}
 --- !u!114 &2126879108
 MonoBehaviour:
   m_ObjectHideFlags: 0

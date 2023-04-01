@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class ClickToMove : MonoBehaviour
 {
-    private NavMeshAgent navAgent;
+    NavMeshAgent navAgent;
     [SerializeField] private GameObject ClickEffect;
     [SerializeField] private float EffectDuration = 2f;
 
