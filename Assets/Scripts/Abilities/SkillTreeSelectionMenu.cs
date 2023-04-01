@@ -17,7 +17,17 @@ public class SkillTreeSelectionMenu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.P))
         {
-            goSkillTreeSelectionMenu.SetActive(!goSkillTreeSelectionMenu.activeSelf);
+            UpdateSkillDisplay();
+        }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            goSkillTreeSelectionMenu.SetActive(false);
         }
     }
+
+    public void UpdateSkillDisplay()
+    {
+        goSkillTreeSelectionMenu.SetActive(!goSkillTreeSelectionMenu.activeSelf);
+    }
+
 }

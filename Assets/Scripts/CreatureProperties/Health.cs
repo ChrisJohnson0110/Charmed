@@ -48,13 +48,16 @@ public class Health : MonoBehaviour
         {
             if (HealthDisplay != null)
             {
-                HealthDisplay.SetActive(false);
+                //HealthDisplay.SetActive(false);
+                Destroy(HealthDisplay);
             }
             if (StatusReference != null)
             {
-                StatusReference.StatusDisplay.SetActive(false);
+                //StatusReference.StatusDisplay.SetActive(false);
+                Destroy(StatusReference);
             }
-            gameObject.SetActive(false);
+            //gameObject.SetActive(false);
+            Destroy(gameObject);
         }
         UpdateDisplay();
 
