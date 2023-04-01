@@ -8,7 +8,6 @@ public class MouseRay : MonoBehaviour
     AutoAttack AutoAttackRef;
     Outline OutlineRef; //outline 
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +15,7 @@ public class MouseRay : MonoBehaviour
         AutoAttackRef = GetComponent<AutoAttack>();
         OutlineRef = GetComponent<Outline>();
     }
+
 
     // Update is called once per frame
     void Update()

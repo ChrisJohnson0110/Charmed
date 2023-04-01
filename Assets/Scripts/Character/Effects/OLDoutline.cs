@@ -26,8 +26,6 @@ public class OLDoutline : MonoBehaviour
 
 
         OutlineMaterial = Resources.Load<Material>("OutlineMaterial");
-        Debug.Log(OutlineMaterial.ToString());
-
         MaterialsWithOutline[RendererMaterials.Length] = OutlineMaterial; //set last mat of new mat array to outline mat
 
 

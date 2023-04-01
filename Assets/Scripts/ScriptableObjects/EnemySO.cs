@@ -17,7 +17,7 @@ public class EnemySO : ScriptableObject
 
     //agressive
     public float AgroRange; //range player needed to gain agro
-    public float AgroDistance; //distance before losing agro
+    //public float AgroDistance; //distance before losing agro
 
     //wander
     public float WanderRangeStart; //distance can wander from start

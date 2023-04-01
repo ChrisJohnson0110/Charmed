@@ -7,6 +7,8 @@ public class Health : MonoBehaviour
 {
     [SerializeField] GameObject HealthDisplay;
     Status StatusReference;
+    Enemy EnemyReference;
+    AggressiveAI AggressiveAIReference;
 
     public float health = 5f;
 
@@ -20,6 +22,8 @@ public class Health : MonoBehaviour
     {
         UpdateDisplay();
         StatusReference = gameObject.GetComponent<Status>();
+        EnemyReference = gameObject.GetComponent<Enemy>();
+        AggressiveAIReference = gameObject.GetComponent<AggressiveAI>();
         fTimer = timeToRegen;
     }
 
@@ -53,6 +57,12 @@ public class Health : MonoBehaviour
             gameObject.SetActive(false);
         }
         UpdateDisplay();
+
+        //if (AggressiveAIReference != null)
+        //{
+        //    AggressiveAIReference.CheckForTarget100f();
+        //    EnemyReference.SetState(Enemy.Behaviours.Aggressive);
+        //}
     }
 
     private void UpdateDisplay()

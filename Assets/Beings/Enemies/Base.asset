@@ -16,8 +16,7 @@ MonoBehaviour:
   MovementSpeed: 5
   Mana: 0
   Health: 50
-  AgroRange: 0
-  AgroDistance: 0
+  AgroRange: 10
   WanderRangeStart: 10
   WanderRangeSelf: 5
   FleeingThreshold: 10

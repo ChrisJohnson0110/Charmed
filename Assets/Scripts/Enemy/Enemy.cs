@@ -17,7 +17,7 @@ public class Enemy : MonoBehaviour
     Health hHealthRef;
 
     public enum Behaviours { 
-        Passive,
+        Wander,
         Fleeing,
         Aggressive
     }
@@ -43,14 +43,33 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
+        //should move ifs to own scripts
         if (hHealthRef.health <= EnemyProperties.FleeingThreshold)
         {
-            if (FleeingAIRef.CheckForDanger())
+            if (FleeingAIRef.CheckForDanger() == true)
             {
                 SetState(Behaviours.Fleeing);
             }
         }
+        else
+        {
+            if (AggressiveAIRef.CheckForTarget()) //player near
+            {
+                SetState(Behaviours.Aggressive);
+            }
+            else
+            {
+                SetState(Behaviours.Wander); //move soon
+            }
+        }
+
+        
+
+        //wander should be set when lost agro, also on start, also on flee reset
+        //once added should work as intended
+
+
 
 
 
@@ -63,15 +82,15 @@ public class Enemy : MonoBehaviour
     {
         switch (currentBehaviour)
         {
-            case Behaviours.Passive:
+            case Behaviours.Wander:
 
                 PassiveAIRef.isWandering = true;
 
                 break;
 
             case Behaviours.Aggressive:
-                
 
+                AggressiveAIRef.isAggressive = true;
 
                 break;
 
@@ -82,7 +101,9 @@ public class Enemy : MonoBehaviour
                 break;
 
             default:
+
                 Debug.LogError("Unknown behaviour: " + currentBehaviour);
+
                 break;
         }
     }
@@ -99,7 +120,7 @@ public class Enemy : MonoBehaviour
             nmaNavMesh.SetDestination(gameObject.transform.position);
             PassiveAIRef.isWandering = false;
             FleeingAIRef.isFleeing = false;
-            //AggressiveAIRef.isAggressive = false;
+            AggressiveAIRef.isAggressive = false;
 
             currentBehaviour = a_bNewBehaviour;
         }

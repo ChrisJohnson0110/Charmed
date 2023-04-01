@@ -9,7 +9,7 @@ public class FleeingAI : MonoBehaviour
 
     LayerMask dangerLayers; // what is a danger
 
-    float DistanceOfDanger = 10f; // distance that if a danger is within will flee
+    float DistanceOfDanger = 100f; // distance that if a danger is within will flee
     [SerializeField] float healthThreshold; //health threshhold before trying to flee
 
     NavMeshAgent nmaNavMesh; // navmesh
@@ -40,6 +40,7 @@ public class FleeingAI : MonoBehaviour
 
     public bool CheckForDanger()
     {
+        
         Collider[] dangerColliders = Physics.OverlapSphere(transform.position, DistanceOfDanger, dangerLayers); //find dangers
         if (dangerColliders.Length > 0)
         {
