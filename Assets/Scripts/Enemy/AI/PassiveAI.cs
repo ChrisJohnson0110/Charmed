@@ -12,16 +12,16 @@ public class PassiveAI : MonoBehaviour
 
     Vector3 v3StartingPosition; //starting pos
     NavMeshAgent nmaNavMesh; //nav mesh
-    Enemy EnemySORef; //nav mesh
+    Creature EnemySORef; //nav mesh
 
     private void Start()
     {
         v3StartingPosition = transform.position; //store the starting pos
         nmaNavMesh = GetComponent<NavMeshAgent>(); //get nav mesh agent
-        EnemySORef = GetComponent<Enemy>();
+        EnemySORef = GetComponent<Creature>();
 
-        fWanderRadiusStart = EnemySORef.EnemyProperties.WanderRangeStart;
-        fWanderDistanceSelf = EnemySORef.EnemyProperties.WanderRangeSelf;
+        fWanderRadiusStart = EnemySORef.CreatureProperties.WanderRangeStart;
+        fWanderDistanceSelf = EnemySORef.CreatureProperties.WanderRangeSelf;
 
     }
 

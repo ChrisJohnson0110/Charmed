@@ -16,15 +16,15 @@ public class AggressiveAI : MonoBehaviour
 
     GameObject target;
 
-    Enemy EnemySORef; //nav mesh
+    Creature EnemySORef; //nav mesh
 
     private void Start()
     {
-        EnemySORef = GetComponent<Enemy>();
+        EnemySORef = GetComponent<Creature>();
         agent = GetComponent<NavMeshAgent>(); //get this agent
         player = GameObject.FindGameObjectWithTag("Player"); //get the player
         TargetLayer = LayerMask.GetMask("FriendlyCreature");
-        AgroRange = EnemySORef.EnemyProperties.AgroRange;
+        AgroRange = EnemySORef.CreatureProperties.AgroRange;
     }
 
     private void Update()

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Status : MonoBehaviour
 {
-    public GameObject StatusDisplay;
+    //public GameObject StatusDisplay;
 
     Player PlayerReference;
     public List<Damage.type> Effects;
@@ -28,27 +28,27 @@ public class Status : MonoBehaviour
     /// </summary>
     private void UpdateDisplay()
     {
-        if (StatusDisplay != null)
-        {
-            //string DisplayStatusString = "";
-            //foreach (Damage.type d in Effects)
-            //{
-            //    if (DisplayStatusString.Contains(d.ToString()) == false)
-            //    {
-            //        if (DisplayStatusString != "")
-            //        {
-            //            DisplayStatusString += " + ";
-            //        }
-            //        DisplayStatusString += d.ToString();
-            //    }
-            //}
-            //StatusDisplay.GetComponent<Text>().text = DisplayStatusString;
-            if (Effects != null)
-            {
-                StatusDisplay.GetComponent<Text>().text = Effects[0].ToString();
-            }
+        //if (StatusDisplay != null)
+        //{
+        //    //string DisplayStatusString = "";
+        //    //foreach (Damage.type d in Effects)
+        //    //{
+        //    //    if (DisplayStatusString.Contains(d.ToString()) == false)
+        //    //    {
+        //    //        if (DisplayStatusString != "")
+        //    //        {
+        //    //            DisplayStatusString += " + ";
+        //    //        }
+        //    //        DisplayStatusString += d.ToString();
+        //    //    }
+        //    //}
+        //    //StatusDisplay.GetComponent<Text>().text = DisplayStatusString;
+        //    if (Effects != null)
+        //    {
+        //        StatusDisplay.GetComponent<Text>().text = Effects[0].ToString();
+        //    }
 
-        }
+        //}
 
     }
 

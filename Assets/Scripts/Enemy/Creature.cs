@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Enemy : MonoBehaviour
+public class Creature : MonoBehaviour
 {
 
-    public EnemySO EnemyProperties;
+    public EnemySO CreatureProperties;
 
     NavMeshAgent nmaNavMesh; //nav mesh
 
@@ -14,7 +14,7 @@ public class Enemy : MonoBehaviour
     FleeingAI FleeingAIRef;
     AggressiveAI AggressiveAIRef;
 
-    Health hHealthRef;
+    public Health hHealthRef;
 
     public enum Behaviours { 
         Wander,
@@ -33,38 +33,44 @@ public class Enemy : MonoBehaviour
         AggressiveAIRef = GetComponent<AggressiveAI>();
 
         nmaNavMesh = GetComponent<NavMeshAgent>(); //get nav mesh agent
-        nmaNavMesh.speed = EnemyProperties.MovementSpeed;
+        nmaNavMesh.speed = CreatureProperties.MovementSpeed;
 
-        hHealthRef = GetComponent<Health>();
-        hHealthRef.health = EnemyProperties.Health;
+        //hHealthRef = GetComponent<Health>();
+        //hHealthRef.health = CreatureProperties.Health;
 
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (hHealthRef != null)
+        {
+            //if (isActive)
+            //{
+            // BehaviourSwitch();
+            //}
 
-        //should move ifs to own scripts
-        if (hHealthRef.health <= EnemyProperties.FleeingThreshold)
-        {
-            if (FleeingAIRef.CheckForDanger() == true)
+
+            //should move ifs to own scripts
+            if (hHealthRef.health <= CreatureProperties.FleeingThreshold)
             {
-                SetState(Behaviours.Fleeing);
-            }
-        }
-        else
-        {
-            if (AggressiveAIRef.CheckForTarget()) //player near
-            {
-                SetState(Behaviours.Aggressive);
+                if (FleeingAIRef.CheckForDanger() == true)
+                {
+                    SetState(Behaviours.Fleeing);
+                }
             }
             else
             {
-                SetState(Behaviours.Wander); //move soon
+                if (AggressiveAIRef.CheckForTarget()) //player near
+                {
+                    SetState(Behaviours.Aggressive);
+                }
+                else
+                {
+                    SetState(Behaviours.Wander); //move soon
+                }
             }
         }
-
-        
 
         //wander should be set when lost agro, also on start, also on flee reset
         //once added should work as intended

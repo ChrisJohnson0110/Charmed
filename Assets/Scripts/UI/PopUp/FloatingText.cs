@@ -5,7 +5,7 @@ using UnityEngine;
 public class FloatingText : MonoBehaviour
 {
     Transform mainCamera;
-    Transform unit;
+    public Transform unit;
     Transform worldSpaceCanvas;
     public Vector3 offset;
 
@@ -14,7 +14,7 @@ public class FloatingText : MonoBehaviour
     {
         worldSpaceCanvas = GameObject.FindGameObjectWithTag("WorldSpaceCanvas").transform;
         mainCamera = Camera.main.transform;
-        unit = transform.parent;
+        //unit = transform.parent;
 
         transform.SetParent(worldSpaceCanvas);
     }
@@ -23,6 +23,6 @@ public class FloatingText : MonoBehaviour
     void Update()
     {
         transform.rotation = Quaternion.LookRotation(transform.position - mainCamera.position);
-        transform.position = unit.position + offset;
+        //transform.position = unit.position + offset;
     }
 }

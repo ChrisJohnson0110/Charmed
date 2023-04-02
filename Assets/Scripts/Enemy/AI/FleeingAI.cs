@@ -16,7 +16,7 @@ public class FleeingAI : MonoBehaviour
     Transform CurrentDanger; // current danger
 
     Health hHealthRef;
-    Enemy eEnemyRef;
+    Creature eEnemyRef;
 
     float StartingTime; //time needed before starting to wander
     float Timer;
@@ -25,9 +25,9 @@ public class FleeingAI : MonoBehaviour
     {
         nmaNavMesh = GetComponent<NavMeshAgent>(); // get navmesh
         hHealthRef = GetComponent<Health>(); //get health
-        eEnemyRef = GetComponent<Enemy>(); //get enemy
+        eEnemyRef = GetComponent<Creature>(); //get enemy
         dangerLayers = LayerMask.GetMask("FriendlyCreature");
-        healthThreshold = eEnemyRef.EnemyProperties.FleeingThreshold;
+        healthThreshold = eEnemyRef.CreatureProperties.FleeingThreshold;
     }
 
     private void Update()

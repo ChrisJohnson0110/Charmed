@@ -29,7 +29,11 @@ public class EnemySO : ScriptableObject
     //resistences
     public float Armour;
     public float MagicResistence;
-    public Damage.type ResitanceType;
+
+    //public Damage.type ResitanceType;
+    public float FireResistance;
+    public float ColdResistance;
+    public float PoisonResistance;
 
     //attacks
     public bool IsRanged;

@@ -5,11 +5,6 @@ using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField] GameObject HealthDisplay;
-    Status StatusReference;
-    Enemy EnemyReference;
-    AggressiveAI AggressiveAIReference;
-
     public float health = 5f;
 
     [SerializeField] bool canRegen = true; //is able to regen
@@ -20,10 +15,7 @@ public class Health : MonoBehaviour
 
     private void Start()
     {
-        UpdateDisplay();
-        StatusReference = gameObject.GetComponent<Status>();
-        EnemyReference = gameObject.GetComponent<Enemy>();
-        AggressiveAIReference = gameObject.GetComponent<AggressiveAI>();
+        //UpdateDisplay();
         fTimer = timeToRegen;
     }
 
@@ -46,33 +38,28 @@ public class Health : MonoBehaviour
 
         if (health <= 0)
         {
-            if (HealthDisplay != null)
-            {
-                //HealthDisplay.SetActive(false);
-                Destroy(HealthDisplay);
-            }
-            if (StatusReference != null)
-            {
-                //StatusReference.StatusDisplay.SetActive(false);
-                Destroy(StatusReference);
-            }
+            
+            //if (StatusReference != null)
+            //{
+            //    //StatusReference.StatusDisplay.SetActive(false);
+            //    Destroy(StatusReference);
+            //}
+            //if (HealthDisplay != null)
+            //{
+            //    //HealthDisplay.SetActive(false);
+            //    Destroy(HealthDisplay);
+            //}
             //gameObject.SetActive(false);
             Destroy(gameObject);
         }
-        UpdateDisplay();
-
-        //if (AggressiveAIReference != null)
-        //{
-        //    AggressiveAIReference.CheckForTarget100f();
-        //    EnemyReference.SetState(Enemy.Behaviours.Aggressive);
-        //}
+        //UpdateDisplay();
     }
 
-    private void UpdateDisplay()
-    {
-        if (HealthDisplay != null)
-        {
-            HealthDisplay.GetComponent<Text>().text = health.ToString();
-        }
-    }
+    //private void UpdateDisplay()
+    //{
+    //    if (HealthDisplay != null)
+    //    {
+    //        HealthDisplay.GetComponent<Text>().text = health.ToString();
+    //    }
+    //}
 }
